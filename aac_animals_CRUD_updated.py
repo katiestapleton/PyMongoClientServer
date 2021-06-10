@@ -32,10 +32,10 @@ class AnimalShelterCRUD(object):
         return result
 
 # query document(s) from speficied database/collection 
-    def ReadDoc(self, search): # data should be dictionary
+    def ReadDoc(self, searchData): # data should be dictionary
         """Read/query data in collection. Requires standard key:pair syntax used with find()."""   
-        if search is not None:
-            result = self.database.animals.find(search)  
+        if searchData is not None:
+            result = self.database.animals.find(searchData)  
             return result      
         else:
             # raise Exception("Data query failed. Please check the search parameters.")
@@ -43,10 +43,10 @@ class AnimalShelterCRUD(object):
         return result
 
 # update document(s) from speficied database/collection 
-    def UpdateDoc(self, update): # data should be dictionary
-        """Read/query collection. Dy default, overwrites existing data; $set operator is needed to update and add field(s)."""   
-        if update is not None:
-            result = self.database.animals.update(update)  
+    def UpdateDoc(self, updateData): # data should be dictionary
+        """Read/query collection. Dy default, overwrites existing data; $set operator is needed to add field(s)."""   
+        if updateData is not None:
+            result = self.database.animals.update(updateData)  
             return result      
         else:
             # raise Exception("Data query failed. Please check the search parameters.")
@@ -54,10 +54,10 @@ class AnimalShelterCRUD(object):
         return result
     
 # delete document(s) from speficied database/collection 
-    def DeleteDoc(self, userData): # data should be dictionary
+    def DeleteDoc(self, removeData): # data should be dictionary
         """Delete data in collection. Requires standard key:pair syntax used with remove()."""   
-        if userData is not None:
-            result = self.database.animals.remove(userData)  
+        if removeData is not None:
+            result = self.database.animals.remove(removeData)  
             return result      
         else:
             # raise Exception("Data deletion failed. Please check the parameters.")

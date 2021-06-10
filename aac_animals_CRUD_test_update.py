@@ -19,11 +19,15 @@ class TestAnimalShelterCRUD:
 #***********************************
 # TEST WITH NO DATA ()
     # userData = None
-    # search = None
-
-# TEST WITH BLANK DATA ()
+    # searchData = None
+    # updateData = None
+    # removeData = None
+    
+# TEST WITH BLANK DATA ()  {} or {"":""}
     # userData = {}
-    # search = None
+    # searchData = {"":""}
+    # updateData = {"":""}
+    # removeData = {"":""}
     
 # TEST WITH SAMPLE DATA    
     # mockup document/data for testing
@@ -45,7 +49,9 @@ class TestAnimalShelterCRUD:
         "age_upon_outcome_in_weeks"  : 156.767857142857
     }
     
-    search = {"breed" : "Beagle"}
+    searchData = {"breed" : "Beagle"}
+    updateData = {"animal_id" : "A664290"}, {"color : Brown Tabby"}
+    removeData = {"animal_id" : "TEST001"}
     
     
     # test create/upload function
@@ -53,5 +59,14 @@ class TestAnimalShelterCRUD:
     print(addData)
 
     # Test read/find() function
-    findData =  run.ReadDoc(search)
+    findData = run.ReadDoc(searchData)
     print(findData)
+    
+    # Test update() function
+    findData = run.UpdateDoc(updateData)
+    print(findData)  
+    
+    # Test delete() function
+    findData = run.DeleteDoc(removeData)
+    print(findData)  
+
