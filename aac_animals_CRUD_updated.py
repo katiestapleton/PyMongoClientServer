@@ -38,11 +38,9 @@ class AnimalShelterCRUD(object):
         return result
 
     
-# FIXME: 2 types of issues: Unable to find solution. resolving issue 1 result in issue 2 (vice versa)
-#  1: (self, one argument) = "missing 1 required positional argument document"
+
+#  Resolved error: "missing 1 required positional argument document"
 #  source:  https://stackoverflow.com/questions/57448210/typeerror-update-missing-1-required-positional-argument-document
-#  2: (self, one, two argmuent) =  "takes 2 positional arguments but 3 were given"
-#  source: stackoverflow - multiple. most comment cause: missing "self" declarations
 
 # update document(s) from speficied database/collection 
     def UpdateDoc(self, updateQuery, updateData): # data should be dictionary
