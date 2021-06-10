@@ -1,9 +1,4 @@
-# Katie Stapleton
-# CS 340
-# Module 5 Milestone
-# 06/02/2021
 
-# CRUD operatations for PyMongo database
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 from pymongo.errors import ConnectionFailure
@@ -42,12 +37,18 @@ class AnimalShelterCRUD(object):
             result = 'Data query failed. Please check the search parameters. Data may not be located within the system.'
         return result
 
+    
+# FIXME: 2 types of issues: Unable to find solution. resolving issue 1 result in issue 2 (vice versa)
+#  1: (self, one argument) = "missing 1 required positional argument document"
+#  source:  https://stackoverflow.com/questions/57448210/typeerror-update-missing-1-required-positional-argument-document
+#  2: (self, one, two argmuent) =  "takes 2 positional arguments but 3 were given"
+#  source: stackoverflow - multiple. most comment cause: missing "self" declarations
+
 # update document(s) from speficied database/collection 
-    def UpdateDoc(self, updateData): # data should be dictionary
-        """Read/query collection. Dy default, overwrites existing data; $set operator is needed to add field(s)."""   
-        if updateData is not None:
-            result = self.database.animals.update(updateData)  
-            return result      
+    def UpdateDoc(self, updateQuery, updateData): # data should be dictionary
+        """Read/query collection. $set operator is needed."""   
+        if updateQuery is not None and updateData is not None:
+            result = self.database.animals.update(updateQuery, updateData)        
         else:
             # raise Exception("Data query failed. Please check the search parameters.")
             result = 'Data update failed. Please check the search parameters. Data may not be located within the system.'

@@ -20,14 +20,15 @@ class TestAnimalShelterCRUD:
 # TEST WITH NO DATA ()
     # userData = None
     # searchData = None
-    # updateData = None
-    # removeData = None
+    # updateQuery = None
+    # updateData = None 
+    # deleteData = None
     
 # TEST WITH BLANK DATA ()  {} or {"":""}
     # userData = {}
     # searchData = {"":""}
     # updateData = {"":""}
-    # removeData = {"":""}
+    # deleteData = {"":""}
     
 # TEST WITH SAMPLE DATA    
     # mockup document/data for testing
@@ -50,7 +51,10 @@ class TestAnimalShelterCRUD:
     }
     
     searchData = {"breed" : "Beagle"}
-    updateData = {"animal_id" : "A664290"}, {"color : Brown Tabby"}
+
+    updateQuery = {"animal_id" : "A736551"}
+    updateData = {"$set":{"name":"blue eyes"}}
+    
     removeData = {"animal_id" : "TEST001"}
     
     
@@ -63,10 +67,9 @@ class TestAnimalShelterCRUD:
     print(findData)
     
     # Test update() function
-    findData = run.UpdateDoc(updateData)
-    print(findData)  
+    reviseData = run.UpdateDoc(updateQuery, updateData)
+    print(reviseData) 
     
     # Test delete() function
-    findData = run.DeleteDoc(removeData)
-    print(findData)  
-
+    deleteData = run.DeleteDoc(removeData)
+    print(deleteData)  
