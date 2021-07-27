@@ -22,7 +22,7 @@ First, the mongoDB was created and tested. The csv was uploaded into a MongoDB a
 
 The layout of the user interface starts with a heading, title, and brief description. Next, a data table is available for users to interact with. The user can sort the files based on the data columns or using tabs with customized queries to review specific animals. Following the table, a scatterplot compares the animal breed to its age. This provides users a quick glance at the available animals without reading all the information. A geomap (using Leaflet) is available for users to view the exact location of the animal with a short summary of data available in the hover tag. For a visual of the user interface, please navigate to the “preview” folder, containing screenshots when the application is live. 
 
-Troubleshooting
+**Troubleshooting**
 
 Other materials used included resource documentations, stackoverflow, and tech forums. Many sites and sources were used, but some specific links have also been documented/provided. The Jupyter Notebook was used to constantly test the coding as it was being developed. Issues were addressed individually as they occurred. Improvements was built upon top of each other to ensure functionality and minimize trouble-shooting. 
 
